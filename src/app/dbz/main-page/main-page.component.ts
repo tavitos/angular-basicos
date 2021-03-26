@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 
 import { Personaje } from '../interfaces/dbz.interface';
 
+import { DbzService } from '../services/dbz.service';
+
 /* interface Personaje {
   nombre: string;
   poder: number;
@@ -13,7 +15,7 @@ import { Personaje } from '../interfaces/dbz.interface';
 })
 export class MainPageComponent {
 
-  personajes: Personaje[] = [
+  /* personajes: Personaje[] = [
     {
       nombre: 'Goku',
       poder: 15000
@@ -22,19 +24,26 @@ export class MainPageComponent {
       nombre: 'Vegeta',
       poder: 7500
     }
-  ];
+  ]; */
+
+  // personajes: Personaje[] = [];
 
   nuevo: Personaje = {
     nombre: 'Maestro Roshi',
     poder: 1000
   }
 
-  agregarNuevoPersonaje( argumento: Personaje){
+  // Creación del getter
+  /* get personajes():Personaje[]{
+    return this.dbzService.personajes;
+  } */
+
+  /* agregarNuevoPersonaje( argumento: Personaje){
     // debugger; Pausa la ejecución del programa y muestra la pestaña Sources mostrando el código en donde esta la palabra debugger
     // console.log('Main page component');
     // console.log(argumento);
     this.personajes.push(argumento);
-  }
+  } */
 
   /* cambiarNombre( event: any ){
     console.log( event.target.value );
@@ -53,5 +62,9 @@ export class MainPageComponent {
     this.nuevo = {nombre: '', poder: 0}
     
   } */
+
+  // Lo de abajo en lo que se conoce como una inyección de dependencias
+  // Es decir, se inyecta el servicio en éste componente.
+  constructor() {}
 
 }
